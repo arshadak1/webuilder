@@ -1,0 +1,505 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+    <!-- body -->
+<section>
+    <div class="container pt-5">
+        <div class="container-fluid d-flex justify-content-center">
+            <h1 class="display-2">Fill The Form</h1>
+        </div>
+        <form id="form" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="data-from-js" id="data-input">
+            <div class="container">
+                <!-- --------------------------
+                PERSONAL DETAILS SECTIONS
+            ------------------------------- -->
+                <section id="personal">
+                    <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 pt-4">
+                        <div class="mb-3 col-md-12">
+                            <h1 class="display-6 mb-3">Personal Details</h1>
+                        </div>
+
+                        <div class="mb-3 col">
+                            <label for="first-name" class="form-label">First Name<span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="first-name" name="first-name">
+
+                        </div>
+
+                        <div class="mb-3 col">
+                            <label for="last-name" class="form-label">Last Name<span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="last-name" name="last-name">
+
+                        </div>
+
+                        <div class="mb-3 col">
+                            <label for="emailInput" class="form-label">Email<span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="emailInput" name="email"
+                                placeholder="test@example.com">
+                        </div>
+
+                        <div class="mb-3 col">
+                            <label for="phoneInput" class="form-label">Phone<span
+                                    class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" id="phoneInput" name="phone"
+                                placeholder="123-456-789">
+                        </div>
+
+                        <div class="mb-3 col-12">
+                            <label for="inputAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" name="address"
+                                placeholder="1234 Main St">
+                        </div>
+
+                        <div class="mb-3 col-12">
+                            <label for="inputAddress2" class="form-label">Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress2" name="address2"
+                                placeholder="Apartment, studio, or floor">
+                        </div>
+
+                        <div class="mb-3 col-md-6">
+                            <label for="inputCity" class="form-label">City<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="inputCity" name="city">
+                        </div>
+
+                        <div class="mb-3 col-md-3">
+                            <label for="inputState" class="form-label">State<span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="inputState" name="state">
+
+                        </div>
+
+                        <div class="mb-3 col-md-3">
+                            <label for="inputZip" class="form-label">Zip<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="inputZip" name="zip">
+                        </div>
+
+                        <div class="mb-3 col-md-12">
+                            <label for="formFile" class="form-label">Upload your photo<span
+                                    class="text-danger">*</span></label>
+                            <input class="form-control" type="file" id="formFile" name="image-file">
+                        </div>
+                        <div class="mb-3 col-md-12">
+                            <label for="aboutYourself" class="form-label">Tell us about
+                                yourself<span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="aboutYourself" rows="5"
+                                name="about-yourself"></textarea>
+                        </div>
+
+                        <div class="mb-3 d-md-flex justify-content-md-end col-md-12">
+
+                            <button type="button" class="btn btn-outline-danger me-md-3 rounded-0 clear-btn"
+                                id="personal-data-clear">Clear</button>
+                            <button type="button" class="btn btn-outline-primary rounded-0 save-btn"
+                                id="personal-data-save">Save</button>
+
+                        </div>
+                    </div>
+                </section>
+                <!-- --------------------------
+                LINK SECTIONS
+                ------------------------------- -->
+                <section id="link">
+                    <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 pt-4">
+                        <div class="mb-3 col-md-12">
+                            <h1 class="display-6 mb-3">Links</h1>
+                        </div>
+                        <div class="mb-3 col">
+                            <label for="git-link" class="form-label">GitHub<span
+                                    class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon3">https://github.com/</span>
+                                <input type="text" class="form-control" id="git-link"
+                                    aria-describedby="basic-addon3" name="git-link">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col">
+                            <label for="facebook-link" class="form-label">Facebook<span
+                                    class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon3">https://facebook.com/</span>
+                                <input type="text" class="form-control" id="facebook-link"
+                                    aria-describedby="basic-addon3" name="facebook-link">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col">
+                            <label for="twitter-link" class="form-label">Twitter<span
+                                    class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon3">https://twitter.com/</span>
+                                <input type="text" class="form-control" id="twitter-link"
+                                    aria-describedby="basic-addon3" name="twitter-link">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col">
+                            <label for="instagram-link" class="form-label">Instagram<span
+                                    class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon3">https://instagram.com/</span>
+                                <input type="text" class="form-control" id="instagram-link"
+                                    aria-describedby="basic-addon3" name="instagram-link">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col">
+                            <label for="linkedin-link" class="form-label">LinkedIn<span
+                                    class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon3">https://linkedin.com/</span>
+                                <input type="text" class="form-control" id="linkedin-link"
+                                    aria-describedby="basic-addon3" name="linkedin-link">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col">
+                            <label for="resumeLink" class="form-label">Resume Link<span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="resumeLink" name="resume-link">
+                        </div>
+
+
+                        <div class="mb-3 d-md-flex justify-content-md-end col-md-12">
+
+                            <button type="button" class="btn btn-outline-danger me-md-3 rounded-0 clear-btn"
+                                id="link-data-clear">Clear</button>
+                            <button type="button" class="btn btn-outline-primary rounded-0 save-btn"
+                                id="link-data-save">Save</button>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ----------------------
+                TECHNICAL SIDE
+                --------------------------- -->
+                <input type="hidden" name="prof-skill-data" id="prof-skill-data">
+                <section id="technical">
+                    <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 pt-4">
+                        <div class="mb-3 col-md-12">
+                            <h1 class="display-6 mb-3">Technical Details</h1>
+                        </div>
+
+                        <div class="mb-3 col" id="prof-titles">
+
+                            <label for="titles" class="form-label">Your Professional Titles<span
+                                    class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control title-input" placeholder="eg: Web Developer"
+                                    aria-label="Professional Title" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-success" type="button">Add Title</button>
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3 col" id="prof-skills">
+
+                            <label for="titles" class="form-label">Your Skills<span
+                                    class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control skill-input" placeholder="eg: Python"
+                                    aria-label="Professional Title" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-success" type="button">Add Skill</button>
+                            </div>
+
+                        </div>
+                        <div class="mb-3 d-md-flex justify-content-md-end col-md-12">
+
+                            <button type="button" class="btn btn-outline-danger me-md-3 rounded-0 clear-btn"
+                                id="technical-data-clear">Clear</button>
+                            <button type="button" class="btn btn-outline-primary rounded-0 save-btn"
+                                id="technical-data-save">Save</button>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ------------------------------
+                    PROJECTS
+                ----------------------------------- -->
+                <section id="project">
+                    <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 pt-4">
+                        <div class="mb-3 d-flex col-md-12 align-items-center justify-content-between">
+                            <h1 class="display-6">Projects</h1>
+                            <button class="btn btn-success add-section" type="button" id="add-project">Add
+                                Project</button>
+                        </div>
+                    </div>
+                    <input type="hidden" name="project-data" id="project-data">
+                    <section id="project-section">
+                        <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 ">
+
+
+                            <div class="d-flex mb-3 col-md-12 align-items-center justify-content-between">
+                                <h2 class="fs-3">Project-I</h2>
+
+                            </div>
+                            <div class="mb-3 col">
+                                <label for="project-title-1" class="form-label">Project Title<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R1C1" id="project-title-1">
+
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="project-tech-1" class="form-label">Tech Used<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R1C2" id="project-tech-1">
+
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="project-live-link-1" class="form-label">Live Demo Link<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R2C1" id="project-live-link-1">
+
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="project-source-code-1" class="form-label">Source Code<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R2C2" id="project-source-code-1">
+
+                            </div>
+
+
+                            <div class="mb-3 col">
+                                <label for="project-start-1-date" class="form-label">Start
+                                    Date<span class="text-danger">*</span></label>
+                                <input type="date" class="form-control R3C1" id="project-start-date-1">
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="project-end-1-date" class="form-label">End Date</label>
+                                <input type="date" class="form-control R3C2" id="project-end-date-1">
+                                <input class="form-check-input disable-date mt-2 R3C2" type="checkbox" value=""
+                                    id="project-check-box-1">
+                                <label class="form-check-label mt-1" for="on-going-check-1">On-going project
+                                </label>
+                            </div>
+
+                            <div class="mb-3 col-md-12">
+                                <label for="project-summary-1" class="form-label">Project
+                                    Summary<span class="text-danger">*</span></label>
+                                <textarea class="form-control R4C1" id="project-summary-1" rows="5"></textarea>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 mt-1">
+
+                        <div class="mb-3 d-md-flex justify-content-md-end col-md-12 ">
+
+                            <button type="button" class="btn btn-outline-danger me-md-3 rounded-0 clear-btn"
+                                id="project-data-clear">Clear</button>
+                            <button type="button" class="btn btn-outline-primary rounded-0 save-btn"
+                                id="project-data-save">Save</button>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ------------------------------
+                EDUCATION
+            ----------------------------------- -->
+
+                <section id="education">
+                    <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 pt-4">
+                        <div class="mb-3 d-flex col-md-12 align-items-center justify-content-between">
+                            <h1 class="display-6">Education</h1>
+                            <button class="btn btn-success add-section" type="button" id="add-education">Add
+                                Education</button>
+
+                        </div>
+                    </div>
+                    <input type="hidden" name="education-data" id="education-data">
+                    <section id="education-section">
+                        <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 ">
+
+
+                            <div class="mb-3 col">
+                                <label for="school-1" class="form-label">School/College<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R1C1" id="education-school-1">
+
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="degree-1" class="form-label">Degree<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R1C2" id="education-degree-1">
+
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="education-subject-1" class="form-label">Subject<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R2C1" id="education-subject-1">
+
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="education-location-1" class="form-label">Location<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R2C2" id="education-location-code-1">
+
+                            </div>
+
+
+                            <div class="mb-3 col">
+                                <label for="education-start-date-1" class="form-label">Start
+                                    Date<span class="text-danger">*</span></label>
+                                <input type="date" class="form-control R3C1" id="education-start-date-1">
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="education-end-date-1" class="form-label">End Date</label>
+                                <input type="date" class="form-control R3C2" id="education-end-date-1">
+                                <input class="form-check-input disable-date mt-2 R3C2" type="checkbox" value=""
+                                    id="education-check-box-1">
+                                <label class="form-check-label mt-1" for="education-check-box-1">Not completed yet
+                                </label>
+                            </div>
+
+                            <div class="mb-3 col-md-12">
+                                <label for="education-summary-1" class="form-label">Summary</label>
+                                <textarea class="form-control" id="education-summary-1" rows="5"></textarea>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 mt-1">
+
+                        <div class="mb-3 d-md-flex justify-content-md-end col-md-12 ">
+
+                            <button type="button" class="btn btn-outline-danger me-md-3 rounded-0 clear-btn"
+                                id="project-data-clear">Clear</button>
+                            <button type="button" class="btn btn-outline-primary rounded-0 save-btn"
+                                id="project-data-save">Save</button>
+
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- ------------------------------
+                PROFESSIONAL EXPERIENCE
+            ----------------------------------- -->
+                <section id="experience">
+                    <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 pt-4">
+                        <div class="mb-3 d-flex col-md-12 align-items-center justify-content-between">
+                            <h1 class="display-6">Professional Experience</h1>
+                            <button class="btn btn-success add-section" type="button" id="add-experience">Add
+                                Experience</button>
+
+                        </div>
+                    </div>
+                    <input type="hidden" name="experience-data" id="experience-data">
+                    <section id="experience-section">
+                        <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-md-3 ">
+
+
+                            <div class="mb-3 col">
+                                <label for="company-1" class="form-label">Company<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R1C1" id="experience-company-1">
+
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="role-1" class="form-label">Role<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R1C2" id="experience-role-1"
+                                    placeholder="eg: Product Manager">
+
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="experience-location-1" class="form-label">Location<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R2C1" id="experience-location-1">
+
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="experience-dept-1" class="form-label">Department<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control R2C2" id="experience-dept-1"
+                                    placeholder="eg: IT">
+
+                            </div>
+
+
+
+
+                            <div class="mb-3 col">
+                                <label for="experience-start-date-1" class="form-label">Start
+                                    Date<span class="text-danger">*</span></label>
+                                <input type="date" class="form-control R3C1" id="experience-start-date-1">
+                            </div>
+
+                            <div class="mb-3 col">
+                                <label for="experience-end-date-1" class="form-label">End Date</label>
+                                <input type="date" class="form-control R3C2" id="experience-end-date-1">
+                                <input class="form-check-input disable-date mt-2 R3C2" type="checkbox" value=""
+                                    id="experience-check-box-1">
+                                <label class="form-check-label mt-1" for="experience-check-box-1">Still working here
+                                </label>
+                            </div>
+
+                            <div class="mb-3 col-md-12">
+                                <label for="experience-summary-1" class="form-label">Summary</label>
+                                <textarea class="form-control R4C1" id="experience-summary-1" rows="5"></textarea>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <div class="container row row-cols-md-2 row-cols-1 gx-md-5 mb-4 gy-md-3 mt-1">
+
+                        <div class="mb-3 d-md-flex justify-content-md-end col-md-12 ">
+
+                            <button type="button" class="btn btn-outline-danger me-md-3 rounded-0 clear-btn"
+                                id="project-data-clear">Clear</button>
+                            <button type="button" class="btn btn-outline-primary rounded-0 save-btn"
+                                id="project-data-save">Save</button>
+
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+            <div class="container row row-cols-md-2 row-cols-1 gx-md-5 gy-3 pt-4 mb-5 border-top">
+
+                <div class="col">
+                    <button class="btn btn-secondary w-100" type="button">Cancel</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn btn-primary w-100" type="submit" id="submit-form">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock body %}
+    
+
+
+{% block script %}
+<script src="{% static 'portfolio/script.js' %}"></script>
+<script src="{% static 'portfolio/data.js' %}"></script>
+{% endblock script %}
+    
+

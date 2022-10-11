@@ -1,0 +1,40 @@
+.btn-secondary {
+  --bs-btn-color: #285192;
+  background-color: #e3ebf7;
+  border-color: #e3ebf7;
+
+}
+.btn-secondary:hover {
+  background-color: #dce4f0;
+  box-shadow: none;
+  color: #285192;
+  border-color: #dce4f0;
+
+
+}
+
+.btn-link:hover {
+    background-color: rgba(33, 37, 41, 0.075);
+
+    
+}
+
+.btn-primary {
+  background-color: #3b71ca;
+    color: #fff;
+    /* box-shadow: 0 4px 9px -4px #3b71ca; */
+
+}
+
+.btn-primary:hover {
+
+background-color: #3265b9;
+color: #fff;
+}
+
+/* .section-close {
+  color: rgb(230, 85, 59);
+  font-size: 24px;
+  cursor: pointer;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} */
