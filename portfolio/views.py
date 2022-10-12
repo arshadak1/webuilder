@@ -48,7 +48,7 @@ def home(request):
         return redirect('download')
 
         
-    return render(request, 'portfolio/index.html')
+    return render(request, 'portfolio/home.html')
 
 
 def personal_data_retriever(request):
