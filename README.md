@@ -1,9 +1,9 @@
 
 <h1 align="center">
   <br>
-  <a href="https://cost-of-living-col.herokuapp.com"><img src="https://user-images.githubusercontent.com/75536974/183626754-cd263053-d0fb-4e31-8348-6455abbe4912.png" alt="COL" width="200"></a>
+  <a href="https://cost-of-living-col.herokuapp.com"><img src="https://user-images.githubusercontent.com/75536974/199182606-e310de35-0110-4e9f-9b43-35b67f6c60af.png" alt="webuilder-logo" width="200"></a>
   <br>
-  Cost Of Living
+    Webuilder
   <br>
 </h1>
 
@@ -58,7 +58,7 @@ This software uses the following open source packages and frameworks:
 
 ## Related
 
-[col-web](https://arshadak.pythonanywhere.com/) - Web version of Cost Of Living.
+[webuilder](https://arshadak.pythonanywhere.com/) - Web version of Cost Of Living.
 
 
 ## License
